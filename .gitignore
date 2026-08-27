@@ -1,0 +1,29 @@
+# Secrets -- real API keys live here. .env.example is the one that ships.
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Local database copies. memory/memory.db itself IS committed: it holds the run
+# history and the learned rules, which are the evidence that the loop evolves.
+memory/*.backup
+memory/*.empty
+memory/memory.db-journal
+memory/memory.db-wal
+memory/memory.db-shm
+
+# Transient working file -- rewritten after every step of every run.
+outputs/last-draft.md
+
+# Dead format. An earlier version of the loop wrote these before the database
+# existed; scripts/backfill_history.py already imported them.
+outputs/run-*.json
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
